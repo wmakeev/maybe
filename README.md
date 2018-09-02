@@ -1,4 +1,4 @@
-# Maybe
+# Maybe [![npm](https://img.shields.io/npm/v/wmakeev/maybe.svg?maxAge=1800&style=flat-square)](https://www.npmjs.com/package/@wmakeev/maybe) [![Travis](https://img.shields.io/travis/wmakeev/maybe.svg?maxAge=1800&style=flat-square)](https://travis-ci.org/wmakeev/maybe)
 
 > This is fork of [maybes](https://github.com/alexanderjarvis/maybe) in which added new `get` method implemented by `lodash.get` module.
 
