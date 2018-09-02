@@ -20,13 +20,13 @@ Scala's [Option](http://www.scala-lang.org/api/current/scala/Option.html).
 Using yarn
 
 ```
-$ yarn add maybes
+$ yarn add @wmakeev/maybes
 ```
 
 or npm
 
 ```
-$ npm install maybes
+$ npm install @wmakeev/maybes
 ```
 
 ## Usage
@@ -34,13 +34,13 @@ $ npm install maybes
 Import the library:
 
 ```js
-import { maybe } from 'maybes'
+import { maybe } from '@wmakeev/maybes'
 ```
 
 or if you want everything:
 
 ```js
-import { maybe, just, nothing } from 'maybes'
+import { maybe, just, nothing } from '@wmakeev/maybes'
 ```
 
 Use the `maybe` function to create a `Maybe` from a value.
