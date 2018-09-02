@@ -1,6 +1,9 @@
 .babelrc
 .flowconfig
+.eslint
+.eslintignore
 .travis.yml
+.vscode
 yarn.lock
 flow-typed/
 src/
