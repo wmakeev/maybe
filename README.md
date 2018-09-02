@@ -1,6 +1,6 @@
-# Maybe [![npm](https://img.shields.io/npm/v/wmakeev/maybe.svg?maxAge=1800&style=flat-square)](https://www.npmjs.com/package/@wmakeev/maybe) [![Travis](https://img.shields.io/travis/wmakeev/maybe.svg?maxAge=1800&style=flat-square)](https://travis-ci.org/wmakeev/maybe)
+# Maybe [![npm](https://img.shields.io/npm/v/@wmakeev/maybes.svg?maxAge=1800&style=flat-square)](https://www.npmjs.com/package/@wmakeev/maybes) [![Travis](https://img.shields.io/travis/wmakeev/maybe.svg?maxAge=1800&style=flat-square)](https://travis-ci.org/wmakeev/maybe)
 
-> This is fork of [maybes](https://github.com/alexanderjarvis/maybe) in which added new `get` method implemented by `lodash.get` module.
+> This is fork of [maybes](https://github.com/alexanderjarvis/maybe) in which added new [`get`](https://github.com/wmakeev/maybe/releases/tag/v0.3.0) method implemented by `lodash.get` module.
 
 Maybe is a type that wraps optional values. It can either be a `Just` (has some value) or a `Nothing`
 (has no value).
