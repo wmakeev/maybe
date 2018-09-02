@@ -1,5 +1,6 @@
 .babelrc
 .flowconfig
 .travis.yml
+yarn.lock
 flow-typed/
 src/

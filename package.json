@@ -1,7 +1,7 @@
 {
-  "name": "maybes",
-  "version": "0.2.4",
-  "description": "Maybe is a type that wraps optional values",
+  "name": "@wmakeev/maybes",
+  "version": "0.3.0",
+  "description": "This is fork of 'maybes' in which added new 'get' method implemented by lodash.get",
   "keywords": [
     "maybe",
     "optional",
@@ -9,11 +9,15 @@
     "just",
     "nothing",
     "some",
-    "none"
+    "none",
+    "lodash.get"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexanderjarvis/maybe.git"
+    "url": "https://github.com/wmakeev/maybe.git"
   },
   "author": "Alexander Jarvis",
   "license": "MIT",
@@ -40,5 +44,8 @@
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.41.0",
     "jest": "^19.0.2"
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
   }
 }
