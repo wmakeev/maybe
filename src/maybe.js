@@ -2,6 +2,8 @@
  * @flow
  */
 
+import get from 'lodash.get'
+
 export type Maybe<A> = Just<A> | Nothing
 
 type AnyVal = number | boolean | string | Object | Array<*> | $ReadOnlyArray<*>
@@ -47,6 +49,10 @@ class Just<A> {
     return new Just(f(this.value))
   }
 
+  get<B: AnyVal>(path: string | Array<string>): Maybe<B> {
+    return maybe(get(this.value, path))
+  }
+
   orElse(): Maybe<A> {
     return this
   }
@@ -82,6 +88,10 @@ class Nothing {
   }
 
   map(): Nothing {
+    return this
+  }
+
+  get(): Nothing {
     return this
   }
 

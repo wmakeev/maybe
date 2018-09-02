@@ -44,6 +44,24 @@ test('orJust', () => {
   expect(y.orJust()).toBe('hello')
 })
 
+test('get value at path', () => {
+  const x = maybe({
+    foo: { bar: 123 },
+  })
+  const result = x.get('foo.bar')
+  expect(result).toEqual(maybe(123))
+  const value = result.just()
+  expect(value).toBe(123)
+})
+
+test('get empty value is nothing', () => {
+  const x = maybe({
+    foo: { bar: 123 },
+  })
+  const result = x.get('baz.bar')
+  expect(result).toEqual(nothing)
+})
+
 test('map value', () => {
   const x = maybe('bob')
   const result = x.map(v => v.toUpperCase())

@@ -1,4 +1,6 @@
-# Maybe [![Build Status](https://travis-ci.org/alexanderjarvis/maybe.svg?branch=master)](https://travis-ci.org/alexanderjarvis/maybe) [![npm version](https://badge.fury.io/js/maybes.svg)](https://badge.fury.io/js/maybes)
+# Maybe
+
+> This is fork of [maybes](https://github.com/alexanderjarvis/maybe) in which added new `get` method implemented by `lodash.get` module.
 
 Maybe is a type that wraps optional values. It can either be a `Just` (has some value) or a `Nothing`
 (has no value).
@@ -56,6 +58,14 @@ Use `map` to transform the value inside the `Maybe`.
 value.map(v => v + 1) // Just(2)
 ```
 
+Use `get` to get property at path of value object inside the `Maybe`.
+
+```js
+const objValue = maybe({ book: { id: '3' } })
+
+objValue.get('book.id') // Maybe(3)
+```
+
 Force unwrap the value with `just()` if it is present. Warning: this will throw an Error if it
 is a `Nothing` (has no value).
 
@@ -79,6 +89,7 @@ Use `orJust()` to provide a default value.
 
 ```js
 empty.map(v => v.toUpperCase()).orJust('hello') // 'hello'
+empty.get('some.path').orJust('hello') // 'hello'
 ```
 
 Use `orElse()` to provide a default already wrapped in a Maybe. This can be useful if you want to combine
@@ -187,6 +198,12 @@ With Maybe
 maybe(object).flatMap(o => maybe(o.value).map(v => v.toUpperCase())).orJust('')
 ```
 
+or
+
+```js
+maybe(object).get('value').map(v => v.toUpperCase())).orJust('')
+```
+
 With types already converted to `Maybe`'s.
 ```js
 const object = maybe({
@@ -195,6 +212,10 @@ const object = maybe({
 
 object.flatMap(o => o.value.map(v => v.toUpperCase())).orJust('')
 ```
+
+## Dependencies
+
+- `lodash.get` - for `get` method support
 
 ## License
 
