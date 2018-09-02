@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- 'node'
-- 'lts/*'
+- node
+- lts/*
 cache: yarn
 before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -19,3 +19,5 @@ deploy:
   on:
     tags: true
     repo: wmakeev/maybe
+  api_key:
+    secure: b2s4GqbPgQkohKwcy1NH+iZfXj2NvaR5s13uhhKqxW4NC9PgvTQPq5DNwq5nh/5RqoyhfNkpqIK2beB4Xg7BGat0DKAfyTOngy9wD64GOaCGpgU2XXj9joXvDfamswFTTxi1GSMFY04NQs5pC8EHy4O1ZbI/EV1l3AcxDo7+NKZYj3EVbp8XhfQ5ilaFp9hmkH08N5PwhowtaYpY1a2vfqw44BaBs6T26G7RfkWTCxHJbk/DaNmxj38K1qC6Dv9tvtgXM2FHkoqDeZJj+g5aQhxkMfoDe/fjoN0gTa4K4KnP4pfKfx3x8QoUizZph236zI3pNnVRY7SyPEKtbntDFYPs0VPZyQbKVie2KKj04CeXR4OkPdfuCY7X2XXppJgnhQRgLGc9JDBSywRxmQBsin/P9vWrWAdLU6IpkFSD46MiJKSaw8YXHH2TM+yK+iUu2Uaprbf8zXFzCAT0UciRXHyipg0VgKidnY3nVdeXvo4x1AYqua9khzuDg7w8rU5Y0rCUxQLN1twVi5HPJM54ZHk5gDOaAbRdn1kwiKlHx47zvEdnsCwgcZxmhFiPGSZqbuH+ooQNcuLbY5c2Mc85faENNLY2441M0gXFIUxJw4OiD85n6+xOn8bsWz+8dwa5KU8DbDcJHUc43M8DtxMBWdAHSXkLjU7mCJlL3FsSPV8=
