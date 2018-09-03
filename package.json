@@ -1,6 +1,6 @@
 {
   "name": "@wmakeev/maybes",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "This is fork of 'maybes' in which added new 'get' method implemented by lodash.get",
   "keywords": [
     "maybe",
