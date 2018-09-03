@@ -8,7 +8,7 @@ export type Maybe<A> = Just<A> | Nothing
 
 type AnyVal = number | boolean | string | Object | Array<*> | $ReadOnlyArray<*>
 
-class Just<A> {
+export class Just<A> {
 
   value: A
 
@@ -63,7 +63,7 @@ class Just<A> {
 
 }
 
-class Nothing {
+export class Nothing {
 
   filter(): Nothing {
     return this

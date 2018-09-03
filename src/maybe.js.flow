@@ -4,7 +4,7 @@ export type Maybe<A> = Just<A> | Nothing
 
 type AnyVal = number | boolean | string | Object | Array<*> | $ReadOnlyArray<*>
 
-declare class Just<A> {
+declare export class Just<A> {
   filter(p: (_: A) => boolean): Maybe<A>;
   flatMap<B: AnyVal>(f: (_: A) => Maybe<B>): Maybe<B>;
   forEach<B>(f: (_: A) => B): void;
@@ -17,7 +17,7 @@ declare class Just<A> {
   orJust<B>(value: B): A;
 }
 
-declare class Nothing {
+declare export class Nothing {
   filter<A>(p: (_: A) => boolean): Nothing;
   flatMap<A, B: AnyVal>(f: (_: A) => Maybe<B>): Nothing;
   forEach<A, B>(f: (_: A) => B): void;

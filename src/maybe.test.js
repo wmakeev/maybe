@@ -2,13 +2,14 @@
  * @flow
  */
 
-import { maybe, just, nothing } from './maybe'
+import { maybe, just, nothing, Just, Nothing } from './maybe'
 import type { Maybe } from './maybe'
 
 test('valid values', () => {
   const x: Maybe<*> = maybe(1)
   expect(x.isJust()).toBe(true)
   expect(x.isNothing()).toBe(false)
+  expect(x).toEqual(new Just(1))
   const y = maybe(0)
   expect(y.isJust()).toBe(true)
   expect(y.isNothing()).toBe(false)
@@ -21,6 +22,7 @@ test('empty values', () => {
   const x = maybe(null)
   expect(x.isNothing()).toBe(true)
   expect(x.isJust()).toBe(false)
+  expect(x).toEqual(new Nothing())
   const y = maybe(undefined)
   expect(y.isNothing()).toBe(true)
   expect(y.isJust()).toBe(false)
