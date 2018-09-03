@@ -5,6 +5,14 @@
 ### Fixes
 ### Other
 
+# v0.4.0
+* Export `Just` and `Nothing` classes
+
+# v0.3.0
+
+### Features
+* Add `get`
+
 # v0.2.3
 
 ### Features
