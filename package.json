@@ -39,12 +39,13 @@
   },
   "devDependencies": {
     "@types/lodash.get": "^4.4.6",
+    "@types/tape": "^4.2.33",
     "prettier": "1.18.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4"
+    "tape": "^4",
+    "typescript": "^3.6.4"
   },
   "dependencies": {
-    "@types/tape": "^4.2.33",
     "lodash.get": "^4"
   }
 }
