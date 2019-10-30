@@ -1,6 +1,16 @@
 # Maybe [![npm](https://img.shields.io/npm/v/@wmakeev/maybes.svg?maxAge=1800&style=flat-square)](https://www.npmjs.com/package/@wmakeev/maybes) [![Travis](https://img.shields.io/travis/wmakeev/maybe.svg?maxAge=1800&style=flat-square)](https://travis-ci.org/wmakeev/maybe)
 
-> This is fork of [maybes](https://github.com/alexanderjarvis/maybe) in which added new [`get`](https://github.com/wmakeev/maybe/releases/tag/v0.3.0) method implemented by `lodash.get` module.
+> This is fork of [maybes](https://github.com/alexanderjarvis/maybe)
+
+**CHANGES IN THIS FORK**
+
+- code ported to TypeScript (also with typings)
+
+- new [`get`](https://github.com/wmakeev/maybe/releases/tag/v0.3.0) method implemented internally with `lodash.get` module
+
+- maybe#map argument function can return nil `.map(v => null)`, in this case the result to be `nothing` (the author of [maybes](https://github.com/alexanderjarvis/maybe) does [not approve of this behavior](https://github.com/alexanderjarvis/maybe/issues/12#issuecomment-309858947), but using `.flatMap(v => maybe(v) ...` is to much boring in some simple cases)
+
+## Description
 
 Maybe is a type that wraps optional values. It can either be a `Just` (has some value) or a `Nothing`
 (has no value).

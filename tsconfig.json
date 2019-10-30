@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["es2018"],
+    "allowJs": false,
+    "outDir": "lib",
+
+    /* Declaration options */
+    "declaration": true,
+    "stripInternal": true,
+
+    /* Source Map Options */
+    "sourceMap": true,
+
+    /* Strict Type-Checking Options */
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strict": true,
+
+    /* Additional Checks */
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmitOnError": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "types": ["node"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+  },
+  "include": ["src/"],
+  "exclude": ["node_modules"]
+}

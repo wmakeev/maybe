@@ -1,7 +1,7 @@
 {
   "name": "@wmakeev/maybes",
-  "version": "0.4.0",
-  "description": "This is fork of 'maybes' in which added new 'get' method implemented by lodash.get",
+  "version": "1.0.0",
+  "description": "This is fork of 'maybes' ported to TypeScript and added some new features",
   "keywords": [
     "maybe",
     "optional",
@@ -22,30 +22,29 @@
   "author": "Alexander Jarvis",
   "license": "MIT",
   "main": "lib/maybe.js",
+  "types": "lib/maybe.d.ts",
+  "files": [
+    "lib/maybe.js",
+    "lib/maybed.d.ts",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "flow": "flow",
-    "lint": "eslint . --max-warnings 0",
-    "test": "jest",
-    "compile": "babel src --out-dir lib --ignore src/maybe.test.js && cp src/maybe.js.flow lib",
-    "prepublish": "yarn run compile",
-    "check": "yarn run lint && yarn run flow check && yarn test"
+    "test": "npm run compile && node lib/maybe.test.js | tap-spec",
+    "style": "prettier --check \"src/**/*.ts\"",
+    "compile": "tsc",
+    "check": "npm run style && npm run test",
+    "prepublishOnly": "npm run check"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^19.0.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.1.8",
-    "eslint": "^3.15.0",
-    "eslint-config-airbnb-base": "^11.1.0",
-    "eslint-plugin-flowtype": "^2.30.0",
-    "eslint-plugin-import": "^2.2.0",
-    "flow-bin": "^0.41.0",
-    "jest": "^19.0.2"
+    "@types/lodash.get": "^4.4.6",
+    "prettier": "1.18.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4"
   },
   "dependencies": {
-    "lodash.get": "^4.4.2"
+    "@types/tape": "^4.2.33",
+    "lodash.get": "^4"
   }
 }
