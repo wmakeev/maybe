@@ -1,6 +1,6 @@
 {
   "name": "@wmakeev/maybes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is fork of 'maybes' ported to TypeScript and added some new features",
   "keywords": [
     "maybe",
@@ -25,7 +25,7 @@
   "types": "lib/maybe.d.ts",
   "files": [
     "lib/maybe.js",
-    "lib/maybed.d.ts",
+    "lib/maybe.d.ts",
     "CHANGELOG.md",
     "LICENSE",
     "README.md"
