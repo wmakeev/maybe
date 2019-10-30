@@ -5,6 +5,10 @@
 ### Fixes
 ### Other
 
+# v1.0.0
+* Port to TypeScript
+* maybe#map argument function can return nil
+
 # v0.4.0
 * Export `Just` and `Nothing` classes
 

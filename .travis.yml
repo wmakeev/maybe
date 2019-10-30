@@ -1,18 +1,15 @@
 language: node_js
+
 node_js:
-- node
-- lts/*
-cache: yarn
-before_install:
-- curl -o- -L https://yarnpkg.com/install.sh | bash
-- export PATH="$HOME/.yarn/bin:$PATH"
+  - node
+  - lts/*
+
 install:
-- yarn install --pure-lockfile
-- yarn check --integrity
+  - npm install
+
 script:
-- yarn run lint
-- yarn run flow check
-- yarn test
+  - npm run check
+
 deploy:
   provider: npm
   email: w.makeev@gmail.com

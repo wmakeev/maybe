@@ -1,8 +1,6 @@
 node_modules
+package-lock.json
 npm-debug.log
 
 lib/
-
-flow-typed/npm/babel*
-flow-typed/npm/eslint*
-flow-typed/npm/flow-bin*
+__temp/

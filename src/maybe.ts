@@ -1,22 +1,23 @@
-/**
- * @flow
- */
-
 import get from 'lodash.get'
 
-export type Maybe<A> = Just<A> | Nothing
+export type Maybe<A> = Nothing | Just<A>
 
-type AnyVal = number | boolean | string | Object | Array<*> | $ReadOnlyArray<*>
+type AnyVal =
+  | number
+  | boolean
+  | string
+  | Object
+  | Array<any>
+  | ReadonlyArray<any>
 
 export class Just<A> {
+  value: NonNullable<A>
 
-  value: A
-
-  constructor(value: $NonMaybeType<A>) {
+  constructor(value: NonNullable<A>) {
     this.value = value
   }
 
-  filter(p: (A) => boolean): Maybe<A> {
+  filter(p: (arg: A) => boolean): Maybe<A> {
     if (p(this.value)) {
       return this
     } else {
@@ -24,12 +25,12 @@ export class Just<A> {
     }
   }
 
-  flatMap<B: AnyVal>(f: (A) => Maybe<B>): Maybe<B> {
+  flatMap<B extends AnyVal>(f: (arg: A) => Maybe<B>): Maybe<B> {
     const result = f(this.value)
     return isNil(result) ? nothing : result
   }
 
-  forEach<B>(f: (A) => B) {
+  forEach<B>(f: (arg: A) => B) {
     f(this.value)
   }
 
@@ -45,11 +46,12 @@ export class Just<A> {
     return this.value
   }
 
-  map<B: AnyVal>(f: (A) => B): Maybe<B> {
-    return new Just(f(this.value))
+  map<B extends AnyVal>(f: (arg: A) => B | null | undefined): Maybe<B> {
+    const result = f(this.value)
+    return isNil(result) ? nothing : new Just(result as NonNullable<B>)
   }
 
-  get<B: AnyVal>(path: string | Array<string>): Maybe<B> {
+  get<B extends AnyVal>(path: string | Array<string>): Maybe<B> {
     return maybe(get(this.value, path))
   }
 
@@ -60,11 +62,9 @@ export class Just<A> {
   orJust(): A {
     return this.value
   }
-
 }
 
 export class Nothing {
-
   filter(): Nothing {
     return this
   }
@@ -99,25 +99,24 @@ export class Nothing {
     return m
   }
 
-  orJust<B>(value: B): B {
+  orJust<B>(value?: B): B | void {
     return value
   }
-
 }
 
-function isNil<T>(value: ?T): boolean {
+function isNil<T>(value: T | null | undefined): boolean {
   return value == null
 }
 
-export function just<T>(value: AnyVal): Just<T> {
+export function just<T extends AnyVal>(value: NonNullable<T>): Just<T> {
   if (isNil(value)) {
-    throw Error('Cannot create Just with an empty value: use flowtype!')
+    throw Error('Cannot create Just with an empty value')
   }
   return new Just(value)
 }
 
 export const nothing: Nothing = Object.freeze(new Nothing())
 
-export function maybe<T>(value: ?T): Maybe<T> {
-  return isNil(value) ? nothing : new Just(value)
+export function maybe<T>(value: T | null | undefined): Maybe<T> {
+  return isNil(value) ? nothing : new Just(value as NonNullable<T>)
 }
